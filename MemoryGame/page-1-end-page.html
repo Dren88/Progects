@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>MemoryGame</title>
+	<link rel="stylesheet" href="css/page-1-end-page.css">
+</head>
+
+<body>
+
+	<img src="Test/assets/Group 2.png">
+	<h1>Поздравляем!
+		<br/>Ваш итоговый счет:
+		<p id="scriptR">
+			<a href="page-1-game-page.html#TOTAL"></a>
+		</p>
+	</h1>
+	<form action="page-1-game-page.html">
+		<button type="submit" data-tid="EndGame-retryGame">Еще раз</button>
+	</form>
+
+	<script type="text/javascript">
+		
+		function getParameterByName(name, url) {
+			if (!url) url = window.location.href;
+			name = name.replace(/[\[\]]/g, "\\$&");
+			var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+				results = regex.exec(url);
+			if (!results) return null;
+			if (!results[2]) return '';
+			return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+		// Выделяем элемент и сохраняем его в переменной.
+		// var el = document.location = "page-1-game-page.html?id=" + document.getElementById("TOTAL").value;
+		// ЧЧЧЧЧ:
+		var el = getParameterByName('count');
+		var eeeel = document.getElementById('scriptR');
+		eeeel.innerHTML = el;
+	</script>
+</body>
+
+</html>

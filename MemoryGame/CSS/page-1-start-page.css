@@ -1,0 +1,26 @@
+/* CSS Document */
+body {
+			background-color: green;
+			color: #000000;
+		}
+
+		button {
+			margin-left: 600px;
+			margin-top: 50px;
+			color: green;
+			border-radius: 10px;
+			font-size: 18px;
+		}
+
+		img {
+			margin-top: 150px;
+			margin-left: 400px;
+			display: block;
+		}
+
+		h1 {
+			margin-left: 550px;
+			margin-top: 50px;
+			color: aliceblue;
+			font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		}

@@ -1,0 +1,81 @@
+/* CSS Document */
+body {
+			background-color: green;
+			color: aliceblue;
+			font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		}
+
+		#container {
+			background-color: green;
+			margin: 60px;
+			width: 1200px;
+			height: 600px;
+			cursor: alias;
+		}
+
+		.cards {
+			width: 130px;
+			height: 170px;
+			margin: 20px;
+			float: left;
+			background-repeat: no-repeat;
+			background-image: url(Test/Cards/back.png);
+		}
+
+		img {
+			opacity: 1;
+			cursor: pointer;
+			width: 130px;
+			height: 170px;
+		}
+
+		.Visibble {
+			opacity: 1;
+		}
+
+		.Hide {
+			opacity: 0;
+			width: 200px;
+			height: 250px;
+		}
+
+		.Clicked {
+			background-color: green;
+
+		}
+
+		.tucked {
+			opacity: 1;
+			background-color: green;
+			visibility: hidden;
+			width: 200px;
+			height: 250px;
+		}
+
+		a {
+			text-decoration: none;
+			font-size: 20px;
+			display: inline;
+			color: aliceblue;
+			float: left;
+		}
+.disabled {
+    pointer-events: none; /* делаем ссылку некликабельной */
+    cursor: default;  /* устанавливаем курсор в виде стрелки */
+    color: #999; /* цвет текста для нективной ссылки */
+}
+		p#itogo {
+
+			margin-left: 900px;
+			font-size: 18px;
+			color: aliceblue;
+			display: inline;
+		}
+
+		p#TOTAL {
+
+			font-size: 18px;
+			color: aliceblue;
+			display: inline;
+		}
+	
