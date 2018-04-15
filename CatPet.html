@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>This cat is your pet</title>
+<script type="text/javascript" src="cookie.js"></script>
+
+    <script type="text/javascript">
+      var userName;
+
+      function resizeCat() {
+        document.getElementById("catImg").style.height = (document.body.clientHeight - 100) * 0.9;
+      }
+
+      function greetUser() {
+        if (navigator.cookieEnabled)
+          userName = readCookie("pet_username");
+        if (userName)
+          alert("Hello " + userName + ", I missed you.");
+        else
+          alert('Hello. I am your cat Vasia. I want eat');
+      }
+		
+		function hungryAgain (){
+		document.getElementById('catImg').src = 'CatEat.png';
+			alert("I want eat again");
+		}
+		
+      function touchCat() {
+        if (userName) {
+          alert("I like the attention, " + userName + ". Thank you.");
+        }
+        else {
+          userName = prompt("What is your name?", "Enter your name here.");
+          if (userName) {
+            alert(userName + ", I ate. Thanks");
+            if (navigator.cookieEnabled)
+              writeCookie("pet_username", userName, 5 * 365);
+            else
+              alert("Cookies aren't supported/enabled in your browser, which means I won't remember you later. I'm sorry.");
+          }
+        }
+        document.getElementById("catImg").src = "Cat.png";
+        setTimeout("hungryAgain ()", 0.1 * 60 * 1000);
+      }
+    </script>
+</head>
+
+<body onload="resizeCat(); greetUser();" onresize="resizeCat();">
+    <div style="margin-top:100px; text-align:center">
+      <img id="catImg" src="CatEat.png" alt="iRock" style="cursor:pointer" onclick="touchCat();" />
+    </div>
+  </body>
+</html>
