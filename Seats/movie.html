@@ -1,0 +1,160 @@
+<html>
+  <head>
+    <title>Movie Ticket</title>
+    <style>
+		body {
+			background: grey;
+		}
+		img {
+			height: 150;
+			border-radius: 15px 15px;
+		}
+	</style>
+
+    <script type="text/javascript">
+		 var seats = [[ false, true, false, true, true, true],
+                   [ false, true, false, false, true, false],
+                   [ true, true, true, true, true, true],
+                   [ true, true, true, false, true, false]];
+		var selSeat = -1;
+		function initSeats(){
+			for (var i=0; i<seats.length; i++){
+				for (var j=0; j<seats[i].length; j++){
+					if (seats[i][j]){
+					 setSeat(i * seats[i].length + j, "Free", "Available seat");
+				}
+				else {
+					setSeat(i * seats[i].length + j, "Busy", "Unavailable seat");
+				}
+			}
+		}
+		}
+		
+		 function getSeatStatus(seatNum) {
+        if (selSeat != -1 && (seatNum == selSeat || seatNum == (selSeat + 1) || seatNum == (selSeat + 2)))
+          return "yours";
+        else if (seats[Math.floor(seatNum / seats[0].length)][seatNum % seats[0].length])
+          return "available";
+        else
+          return "unavailable";
+      }
+		
+		 function showSeatStatus(seatNum) {
+        alert("This seat is " + getSeatStatus(seatNum) + ".");
+      }
+		
+		function setSeat(seatNum, status, description) {
+        document.getElementById("seat" + seatNum).src = status + ".png";
+        document.getElementById("seat" + seatNum).alt = description;
+      }
+		
+     function findSeat(){
+		 		 if (selSeat>=0){
+			 selSeat=-1;
+			 initSeats();
+		 }
+		  neadSeats = prompt("How many seats do you want?", "Enter a number.");
+		 if (isNaN(neadSeats)||!(neadSeats>0)||!(neadSeats<7)){
+	 alert("Введите число от 1 до 6");
+				 }
+else {
+		 var i=0;
+		 var finished=false;
+	var n=0;
+		 while((i<seats.length)&&!finished){
+			 for (var j=0; j<seats[i].length; j++){
+			if (seats[i][j]&&seats[i][j+1]&&seats[i][j+2]){
+				n++;
+				selSeat = i * seats[i].length + j;
+					setSeat(i * seats[i].length + j, "Your", "Your seat");
+              setSeat(i * seats[i].length + j + 1, "Your", "Your seat");
+              setSeat(i * seats[i].length + j + 2, "Your", "Your seat");
+				var accept = confirm ("Seats " + (i + 1) + " through " + (i + 3) + " are available. Accept?");
+				if (accept){
+					finished = true;
+					break;
+				}
+				else {
+					selSeat=-1;
+					setSeat(i * seats[i].length + j, "Free", "Available seat");
+                setSeat(i * seats[i].length + j + 1, "Free", "Available seat");
+                setSeat(i * seats[i].length + j + 2, "Free", "Available seat");
+				}				
+				}
+				
+			 }i++;
+						 }
+		
+	if (n = 0){
+		alert("No matches");
+	}
+}
+						
+	 }
+		window.onload = function() {
+        // Wire the Find Seat button event
+        document.getElementById("findseats").onclick = findSeats;
+
+        // Wire the seat image events
+        document.getElementById("seat0").onclick = function(evt) { showSeatStatus(0); };
+        document.getElementById("seat1").onclick = function(evt) { showSeatStatus(1); };
+        document.getElementById("seat2").onclick = function(evt) { showSeatStatus(2); };
+        document.getElementById("seat3").onclick = function(evt) { showSeatStatus(3); };
+        document.getElementById("seat4").onclick = function(evt) { showSeatStatus(4); };
+        document.getElementById("seat5").onclick = function(evt) { showSeatStatus(5); };
+        document.getElementById("seat6").onclick = function(evt) { showSeatStatus(6); };
+        document.getElementById("seat7").onclick = function(evt) { showSeatStatus(7); };
+        document.getElementById("seat8").onclick = function(evt) { showSeatStatus(8); };
+        document.getElementById("seat9").onclick = function(evt) { showSeatStatus(9); };
+        document.getElementById("seat10").onclick = function(evt) { showSeatStatus(10); };
+        document.getElementById("seat11").onclick = function(evt) { showSeatStatus(11); };
+        document.getElementById("seat12").onclick = function(evt) { showSeatStatus(12); };
+        document.getElementById("seat13").onclick = function(evt) { showSeatStatus(13); };
+        document.getElementById("seat14").onclick = function(evt) { showSeatStatus(14); };
+        document.getElementById("seat15").onclick = function(evt) { showSeatStatus(15); };
+        document.getElementById("seat16").onclick = function(evt) { showSeatStatus(16); };
+        document.getElementById("seat17").onclick = function(evt) { showSeatStatus(17); };
+        document.getElementById("seat18").onclick = function(evt) { showSeatStatus(18); };
+        document.getElementById("seat19").onclick = function(evt) { showSeatStatus(19); };
+        document.getElementById("seat20").onclick = function(evt) { showSeatStatus(20); };
+        document.getElementById("seat21").onclick = function(evt) { showSeatStatus(21); };
+        document.getElementById("seat22").onclick = function(evt) { showSeatStatus(22); };
+        document.getElementById("seat23").onclick = function(evt) { showSeatStatus(23); };
+
+
+        // Initialize the seat appearances
+        initSeats();
+      };
+    </script>
+  </head>
+
+  <body onload="initSeats()">
+    <div style="margin-top:75px; text-align:center">
+      <img id="seat0" src="" alt="" onclick="showSeatStatus(0);" />
+      <img id="seat1" src="" alt="" onclick="showSeatStatus(1);" />
+      <img id="seat2" src="" alt="" onclick="showSeatStatus(2);" />
+      <img id="seat3" src="" alt="" onclick="showSeatStatus(3);" />
+      <img id="seat4" src="" alt="" onclick="showSeatStatus(4);" />
+      <img id="seat5" src="" alt="" onclick="showSeatStatus(5);" /><br />
+      <img id="seat6" src="" alt="" onclick="showSeatStatus(6);" />
+      <img id="seat7" src="" alt="" onclick="showSeatStatus(7);" />
+      <img id="seat8" src="" alt="" onclick="showSeatStatus(8);" />
+      <img id="seat9" src="" alt="" onclick="showSeatStatus(9);" />
+      <img id="seat10" src="" alt="" onclick="showSeatStatus(10);" />
+      <img id="seat11" src="" alt="" onclick="showSeatStatus(11);" /><br />
+      <img id="seat12" src="" alt="" onclick="showSeatStatus(12);" />
+      <img id="seat13" src="" alt="" onclick="showSeatStatus(13);" />
+      <img id="seat14" src="" alt="" onclick="showSeatStatus(14);" />
+      <img id="seat15" src="" alt="" onclick="showSeatStatus(15);" />
+      <img id="seat16" src="" alt="" onclick="showSeatStatus(16);" />
+      <img id="seat17" src="" alt="" onclick="showSeatStatus(17);" /><br />
+      <img id="seat18" src="" alt="" onclick="showSeatStatus(18);" />
+      <img id="seat19" src="" alt="" onclick="showSeatStatus(19);" />
+      <img id="seat20" src="" alt="" onclick="showSeatStatus(20);" />
+      <img id="seat21" src="" alt="" onclick="showSeatStatus(21);" />
+      <img id="seat22" src="" alt="" onclick="showSeatStatus(22);" />
+      <img id="seat23" src="" alt="" onclick="showSeatStatus(23);" /><br />
+      <input type="button" id="findseat" value="Find Seat" onclick="findSeat();" />
+    </div>
+  </body>
+</html>
